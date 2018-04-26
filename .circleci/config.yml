@@ -3,6 +3,7 @@ version: 2
 jobs:
 
   build:
+    machine: true
     steps:
       - checkout
       - android_sdk_setup.sh -b
