@@ -1,0 +1,8 @@
+version: 2
+
+jobs:
+
+  build:
+    steps:
+      - checkout
+      - android_sdk_setup.sh -b
