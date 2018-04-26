@@ -227,7 +227,7 @@ function installAndroidSdkPackages() {
 	cd $ANDROID_SDK_DIR/tools/bin
 	for package in "${packages[@]}"; do
 		printAndSleep "Installing $package"
-		./sdkmanager "$package"
+		echo y | ./sdkmanager "$package"
 	done
 }
 
