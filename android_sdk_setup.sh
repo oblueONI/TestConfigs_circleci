@@ -186,7 +186,7 @@ function acceptAndroidSdkLicenses() {
 
 	printAndSleep "Accepting Android SDK licenses"
 	mkdir -p licenses/
-	yes | sdkmanager --licenses
+	yes | ./sdkmanager --licenses
 }
 
 # Updates already installed Android SDK packages
