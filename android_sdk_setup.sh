@@ -185,7 +185,7 @@ function acceptAndroidSdkLicenses() {
 	cd $ANDROID_SDK_DIR/tools/bin
 
 	printAndSleep "Accepting Android SDK licenses"
-	echo yes | sdkmanager --licenses
+	echo yes | ./android --licenses
 }
 
 # Updates already installed Android SDK packages
@@ -193,7 +193,7 @@ function updateAndroidSdkPackages() {
 	printAndSleep "Checking for Android SdkManager updates..."
 
 	cd $ANDROID_SDK_DIR/tools/bin
-	./sdkmanager --update
+	./android --update
 }
 
 # Updates installed Android SDK
