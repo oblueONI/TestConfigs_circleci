@@ -182,18 +182,18 @@ function updateAndroidHomeVar() {
 #Accept Android SDK Licenses
 function acceptAndroidSdkLicenses() {
 	# navigate into our directory
-	cd $ANDROID_SDK_DIR/tools
+	cd $ANDROID_SDK_DIR
 
 	printAndSleep "Accepting Android SDK licenses"
-	echo yes | ./android sdk --licenses
+	echo yes | tools/bin/sdkmanager --licenses
 }
 
 # Updates already installed Android SDK packages
 function updateAndroidSdkPackages() {
 	printAndSleep "Checking for Android SdkManager updates..."
 
-	cd $ANDROID_SDK_DIR/tools
-	./android sdk --update
+	cd $ANDROID_SDK_DIR
+	tools/bin/sdkmanager --update
 }
 
 # Updates installed Android SDK
@@ -226,7 +226,7 @@ function installAndroidSdkPackages() {
 	cd $ANDROID_SDK_DIR/tools
 	for package in "${packages[@]}"; do
 		printAndSleep "Installing $package"
-		echo y | ./android sdk "$package"
+		echo y | tools/bin/sdkmanager "$package"
 	done
 }
 
