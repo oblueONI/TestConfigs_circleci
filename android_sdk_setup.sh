@@ -182,7 +182,7 @@ function updateAndroidHomeVar() {
 #Accept Android SDK Licenses
 function acceptAndroidSdkLicenses() {
 	# navigate into our directory
-	cd $ANDROID_SDK_DIR/tools/bin
+	cd $ANDROID_SDK_DIR/tools
 
 	printAndSleep "Accepting Android SDK licenses"
 	echo yes | ./android sdk --licenses
@@ -192,7 +192,7 @@ function acceptAndroidSdkLicenses() {
 function updateAndroidSdkPackages() {
 	printAndSleep "Checking for Android SdkManager updates..."
 
-	cd $ANDROID_SDK_DIR/tools/bin
+	cd $ANDROID_SDK_DIR/tools
 	./android sdk --update
 }
 
@@ -223,7 +223,7 @@ function unzipAndroidLinuxSdk() {
 function installAndroidSdkPackages() {
 	printAndSleep "Installing Android SDK Packages"
 	packages=("$@")
-	cd $ANDROID_SDK_DIR/tools/bin
+	cd $ANDROID_SDK_DIR/tools
 	for package in "${packages[@]}"; do
 		printAndSleep "Installing $package"
 		echo y | ./android sdk "$package"
