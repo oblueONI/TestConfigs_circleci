@@ -182,10 +182,9 @@ function updateAndroidHomeVar() {
 #Accept Android SDK Licenses
 function acceptAndroidSdkLicenses() {
 	# navigate into our directory
-	cd $ANDROID_SDK_DIR
+	cd $ANDROID_SDK_DIR/tools/bin
 
 	printAndSleep "Accepting Android SDK licenses"
-	mkdir -p licenses/
 	yes | ./sdkmanager --licenses
 }
 
