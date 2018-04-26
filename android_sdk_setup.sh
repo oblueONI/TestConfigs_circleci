@@ -185,7 +185,7 @@ function acceptAndroidSdkLicenses() {
 	cd $ANDROID_SDK_DIR
 
 	printAndSleep "Accepting Android SDK licenses"
-	echo yes | ./home/circleci/android-sdk/tools/bin/sdkmanager --licenses
+	echo yes | /home/circleci/android-sdk/tools/bin/sdkmanager --licenses
 }
 
 # Updates already installed Android SDK packages
@@ -193,7 +193,7 @@ function updateAndroidSdkPackages() {
 	printAndSleep "Checking for Android SdkManager updates..."
 
 	cd $ANDROID_SDK_DIR
-	./home/circleci/android-sdk/tools/bin/sdkmanager --update
+	/home/circleci/android-sdk/tools/bin/sdkmanager --update
 }
 
 # Updates installed Android SDK
@@ -226,7 +226,7 @@ function installAndroidSdkPackages() {
 	cd $ANDROID_SDK_DIR/tools
 	for package in "${packages[@]}"; do
 		printAndSleep "Installing $package"
-		echo y | ./home/circleci/android-sdk/tools/bin/sdkmanager "$package"
+		echo y | /home/circleci/android-sdk/tools/bin/sdkmanager "$package"
 	done
 }
 
