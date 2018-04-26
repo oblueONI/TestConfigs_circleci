@@ -186,10 +186,7 @@ function acceptAndroidSdkLicenses() {
 
 	printAndSleep "Accepting Android SDK licenses"
 	mkdir -p licenses/
-	echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" >"licenses/android-sdk-license"
-	echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" >"licenses/android-sdk-preview-license"
-	echo -e "\n152e8995e4332c0dc80bc63bf01fe3bbccb0804a
-d975f751698a77b662f1254ddbeed3901e976f5a" >"licenses/intel-android-extra-license"
+	yes | sdkmanager --licenses
 }
 
 # Updates already installed Android SDK packages
